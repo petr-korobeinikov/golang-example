@@ -17,3 +17,9 @@ func (f Fraction) Reduce() Fraction {
 
 	return f;
 }
+
+func (f Fraction) MultiplyByNumber(m int) Fraction {
+	f.Numerator *= m
+
+	return f
+}

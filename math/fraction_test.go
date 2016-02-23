@@ -87,3 +87,45 @@ func TestReduceWithInvalidData(t *testing.T) {
 		}
 	}
 }
+
+func TestMultiplyByNumber(t *testing.T) {
+	// Arrange
+	cases := []struct {
+		expected, given Fraction
+		m               int
+	}{
+		{Fraction{6, 7}, Fraction{3, 7}, 2},
+		{Fraction{4, 2}, Fraction{1, 2}, 4},
+	}
+
+	for _, c := range cases {
+		// Act
+		actual := c.given.MultiplyByNumber(c.m);
+
+		// Assert
+		if actual != c.expected {
+			t.Errorf("Fraction.MultiplyByNumber(%q) = %q, expected %q", c.given, actual, c.expected)
+		}
+	}
+}
+
+func TestMultiplyByNumberWithInvalidData(t *testing.T) {
+	// Arrange
+	invalidCases := []struct {
+		expected, given Fraction
+		m               int
+	}{
+		{Fraction{6, 7}, Fraction{3, 7}, 3},
+		{Fraction{2, 2}, Fraction{1, 2}, 5},
+	}
+
+	for _, c := range invalidCases {
+		// Act
+		actual := c.given.MultiplyByNumber(c.m);
+
+		// Assert
+		if actual == c.expected {
+			t.Errorf("Fraction.MultiplyByNumber(%q) = %q, expected %q", c.given, actual, c.expected)
+		}
+	}
+}
