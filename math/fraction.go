@@ -23,3 +23,10 @@ func (f Fraction) MultiplyByNumber(m int) Fraction {
 
 	return f
 }
+
+func (f Fraction) MultiplyByFraction(m Fraction) Fraction {
+	f.Numerator *= m.Numerator
+	f.Denominator *= m.Denominator
+
+	return f
+}
