@@ -6,7 +6,7 @@ func TestString(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected string
-		given Fraction
+		given    Fraction
 	}{
 		{"1/1", Fraction{1, 1}},
 		{"1/2", Fraction{1, 2}},
@@ -29,7 +29,7 @@ func TestStringWithInvalidData(t *testing.T) {
 	// Arrange
 	invalidCases := []struct {
 		expected string
-		given Fraction
+		given    Fraction
 	}{
 		{"1/5", Fraction{1, 1}},
 	}
