@@ -1,5 +1,6 @@
 package math
 
+// GCDEuclidean calculates GCD by Euclidian algorithm.
 func GCDEuclidean(a, b int) int {
 	for a != b {
 		if a > b {
@@ -12,14 +13,16 @@ func GCDEuclidean(a, b int) int {
 	return a
 }
 
-func GCDReminderRecursive(a, b int) int {
+// GCDReminderRecursive calculates GCD recursively using remainder.
+func GCDRemainderRecursive(a, b int) int {
 	if b == 0 {
 		return a
 	}
-	return GCDReminderRecursive(b, a % b)
+	return GCDRemainderRecursive(b, a % b)
 }
 
-func GCDReminder(a, b int) int {
+// GCDRemainder calculates GCD iteratively using remainder.
+func GCDRemainder(a, b int) int {
 	for b != 0 {
 		a, b = b, a % b
 	}

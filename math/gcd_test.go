@@ -45,22 +45,22 @@ func TestGCDEuclidean(t *testing.T) {
 	actAndAssert(t, GCDEuclidean)
 }
 
-func TestGCDReminderRecursive(t *testing.T) {
-	actAndAssert(t, GCDReminderRecursive)
+func TestGCDRemainderRecursive(t *testing.T) {
+	actAndAssert(t, GCDRemainderRecursive)
 }
 
-func TestGCDReminder(t *testing.T) {
-	actAndAssert(t, GCDReminder)
+func TestGCDRemainder(t *testing.T) {
+	actAndAssert(t, GCDRemainder)
 }
 
 func TestGCDEuclideanWithInvalidData(t *testing.T) {
 	actAndAssertWithInvalidData(t, GCDEuclidean)
 }
 
-func TestGCDReminderRecursiveWithInvalidData(t *testing.T) {
-	actAndAssertWithInvalidData(t, GCDReminderRecursive)
+func TestGCDRemainderRecursiveWithInvalidData(t *testing.T) {
+	actAndAssertWithInvalidData(t, GCDRemainderRecursive)
 }
 
-func TestGCDReminderWithInvalidData(t *testing.T) {
-	actAndAssertWithInvalidData(t, GCDReminder)
+func TestGCDRemainderWithInvalidData(t *testing.T) {
+	actAndAssertWithInvalidData(t, GCDRemainder)
 }
