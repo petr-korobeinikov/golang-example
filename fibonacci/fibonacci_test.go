@@ -17,40 +17,40 @@ var cases = []struct {
 	{14930352, 36},
 }
 
-func TestFibonacciRecursive(t *testing.T) {
+func TestRecursively(t *testing.T) {
 	for _, c := range cases {
 		// Act
-		actual := FibonacciRecursive(c.n)
+		actual := Recursively(c.n)
 
 		// Assert
 		if actual != c.fibn {
-			t.Errorf("FibonacciRecursive(%d) == %d, expected %d", c.n, actual, c.fibn)
+			t.Errorf("Recursively(%d) == %d, expected %d", c.n, actual, c.fibn)
 		}
 	}
 }
 
-func TestFibonacciIterative(t *testing.T) {
+func TestIteratively(t *testing.T) {
 	for _, c := range cases {
 		// Act
-		actual := FibonacciIterative(c.n)
+		actual := Iteratively(c.n)
 
 		// Assert
 		if actual != c.fibn {
-			t.Errorf("FibonacciIterative(%d) == %d, expected %d", c.n, actual, c.fibn)
+			t.Errorf("Iteratively(%d) == %d, expected %d", c.n, actual, c.fibn)
 		}
 	}
 }
 
-func TestFibonacciGoldenRatio(t *testing.T) {
+func TestByGoldenRatio(t *testing.T) {
 	for _, c := range cases {
 		// Act
-		actual := FibonacciGoldenRatio(c.n)
+		actual := ByGoldenRatio(c.n)
 		delta := 3
 
 		// Assert
 		eqWithDelta := (c.fibn - delta <= actual) && (actual <= c.fibn + delta)
 		if !eqWithDelta {
-			t.Errorf("FibonacciGoldenRatio(%d) == %d±%d, expected %d", c.n, actual, delta, c.fibn)
+			t.Errorf("ByGoldenRatio(%d) == %d±%d, expected %d", c.n, actual, delta, c.fibn)
 		}
 	}
 }
