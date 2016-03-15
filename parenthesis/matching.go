@@ -1,5 +1,7 @@
 package parenthesis
 
+// IsMatching check parenthesis order in given string.
+// Returns true, if parenthesis are matching, and false otherwise.
 func IsMatching(s string) bool {
 	l := len(s)
 	if l == 0 {
@@ -17,7 +19,7 @@ func IsMatching(s string) bool {
 	}
 
 	isClosing := func(c rune) bool {
-		for k, _ := range pairs {
+		for k := range pairs {
 			if c == pairs[k] {
 				return true
 			}
