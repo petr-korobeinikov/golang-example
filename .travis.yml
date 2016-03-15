@@ -17,5 +17,6 @@ script:
   - go test -coverprofile=fibonacci.coverprofile ./fibonacci
   - go test -coverprofile=math.coverprofile ./math
   - go test -coverprofile=parenthesis.coverprofile ./parenthesis
+  - go test -coverprofile=foundation.coverprofile ./foundation
   - $HOME/gopath/bin/gover
   - $HOME/gopath/bin/goveralls -coverprofile=gover.coverprofile -service travis-ci
