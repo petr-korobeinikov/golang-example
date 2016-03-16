@@ -28,3 +28,13 @@ func (stack *Stack) Pop() (element interface{}, e error) {
 	*stack = s[:l-1]
 	return
 }
+
+func (stack Stack) Top() (element interface{}, e error) {
+	l := stack.Len()
+	if l == 0 {
+		e = errors.New("There is no top element in empty stack.")
+		return
+	}
+	element = stack[l-1]
+	return
+}

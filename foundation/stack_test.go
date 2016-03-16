@@ -87,3 +87,28 @@ func TestPop(t *testing.T) {
 		}
 	}
 }
+
+func TestTop(t *testing.T) {
+	// Arrange
+	cases := []struct {
+		expected interface{}
+		e        error
+		given    Stack
+	}{
+		{nil, errors.New("There is no top element in empty stack."), Stack{}},
+		{1, nil, Stack{1}},
+		{3, nil, Stack{1, 2, 3}},
+	}
+
+	for _, c := range cases {
+		// Act
+		actual, e := c.given.Top()
+
+		// Assert
+		errorsNotEqual := !(c.e != nil && e != nil && c.e != e)
+		if c.expected != actual && errorsNotEqual {
+			fmt := "%v.Top() == %v, %v, expected %v, %v"
+			t.Errorf(fmt, c.given, actual, e, c.expected, c.e)
+		}
+	}
+}
