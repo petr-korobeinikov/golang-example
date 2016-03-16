@@ -49,7 +49,7 @@ func TestStackPush(t *testing.T) {
 
 		// Assert
 		if !reflect.DeepEqual(c.expected, actual) {
-			fmt := "%v != %v after pushing %v"
+			fmt := "%v == %v after pushing %v"
 			t.Errorf(fmt, c.expected, actual, c.elements)
 		}
 	}
