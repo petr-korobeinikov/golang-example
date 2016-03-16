@@ -66,7 +66,7 @@ func TestPop(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected interface{}
-		e        error
+		err      error
 		given    Stack
 	}{
 		{nil, errors.New("Unable to pop element from empty stack."), Stack{}},
@@ -80,10 +80,10 @@ func TestPop(t *testing.T) {
 		actual, e := c.given.Pop()
 
 		// Assert
-		errorsNotEqual := !(c.e != nil && e != nil && c.e != e)
+		errorsNotEqual := !(c.err != nil && e != nil && c.err != e)
 		if c.expected != actual && errorsNotEqual {
 			fmt := "%v.Pop() == %v, %v, expected %v, %v"
-			t.Errorf(fmt, saveGiven, actual, e, c.expected, c.e)
+			t.Errorf(fmt, saveGiven, actual, e, c.expected, c.err)
 		}
 	}
 }
@@ -92,7 +92,7 @@ func TestTop(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected interface{}
-		e        error
+		err      error
 		given    Stack
 	}{
 		{nil, errors.New("There is no top element in empty stack."), Stack{}},
@@ -105,10 +105,10 @@ func TestTop(t *testing.T) {
 		actual, e := c.given.Top()
 
 		// Assert
-		errorsNotEqual := !(c.e != nil && e != nil && c.e != e)
+		errorsNotEqual := !(c.err != nil && e != nil && c.err != e)
 		if c.expected != actual && errorsNotEqual {
 			fmt := "%v.Top() == %v, %v, expected %v, %v"
-			t.Errorf(fmt, c.given, actual, e, c.expected, c.e)
+			t.Errorf(fmt, c.given, actual, e, c.expected, c.err)
 		}
 	}
 }

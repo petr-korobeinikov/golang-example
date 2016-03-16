@@ -17,11 +17,11 @@ func (stack *Stack) Push(element interface{}) {
 }
 
 // Pop pops element from the end (top) of the given stack.
-func (stack *Stack) Pop() (element interface{}, e error) {
+func (stack *Stack) Pop() (element interface{}, err error) {
 	s := *stack
 	l := s.Len()
 	if l == 0 {
-		e = errors.New("Unable to pop element from empty stack.")
+		err = errors.New("Unable to pop element from empty stack.")
 		return
 	}
 	element = s[l-1]
@@ -29,10 +29,10 @@ func (stack *Stack) Pop() (element interface{}, e error) {
 	return
 }
 
-func (stack Stack) Top() (element interface{}, e error) {
+func (stack Stack) Top() (element interface{}, err error) {
 	l := stack.Len()
 	if l == 0 {
-		e = errors.New("There is no top element in empty stack.")
+		err = errors.New("There is no top element in empty stack.")
 		return
 	}
 	element = stack[l-1]
