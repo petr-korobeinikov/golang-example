@@ -26,7 +26,7 @@ func TestIsMatchingPositive(t *testing.T) {
 
 	for _, c := range cases {
 		if !IsMatching(c) {
-			t.Errorf("IsMatching(%q) expected to be true", c)
+			t.Errorf("IsMatching(%v) expected to be true", c)
 		}
 	}
 }
@@ -52,7 +52,7 @@ func TestIsMatchingNegative(t *testing.T) {
 
 	for _, c := range cases {
 		if IsMatching(c) {
-			t.Errorf("IsMatching(%q) expected to be false", c)
+			t.Errorf("IsMatching(%v) expected to be false", c)
 		}
 	}
 }

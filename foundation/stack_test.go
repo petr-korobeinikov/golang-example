@@ -30,7 +30,7 @@ func TestStackLen(t *testing.T) {
 
 		// Assert
 		if actual != c.expected {
-			t.Errorf("%q.Len() == %d, expected %d", c.given, actual, c.expected)
+			t.Errorf("%v.Len() == %d, expected %d", c.given, actual, c.expected)
 		}
 	}
 }

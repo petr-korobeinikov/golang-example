@@ -19,7 +19,7 @@ func TestString(t *testing.T) {
 
 		// Assert
 		if actual != c.expected {
-			fmt := "String representation of Fraction{%d, %d} == %q, expected %s"
+			fmt := "String representation of Fraction{%d, %d} == %v, expected %s"
 			t.Errorf(fmt, c.given.Numerator, c.given.Denominator, actual, c.expected)
 		}
 	}
@@ -40,7 +40,7 @@ func TestStringWithInvalidData(t *testing.T) {
 
 		// Assert
 		if actual == c.expected {
-			fmt := "String representation of Fraction{%d, %d} == %q, expected %s"
+			fmt := "String representation of Fraction{%d, %d} == %v, expected %s"
 			t.Errorf(fmt, c.given.Numerator, c.given.Denominator, actual, c.expected)
 		}
 	}
@@ -62,7 +62,7 @@ func TestReduce(t *testing.T) {
 
 		// Assert
 		if actual != c.expected {
-			t.Errorf("Fraction.Reduce(%q) = %q, expected %q", c.given, actual, c.expected)
+			t.Errorf("Fraction.Reduce(%v) = %v, expected %v", c.given, actual, c.expected)
 		}
 	}
 }
@@ -83,7 +83,7 @@ func TestReduceWithInvalidData(t *testing.T) {
 
 		// Assert
 		if actual == c.expected {
-			t.Errorf("Fraction.Reduce(%q) = %q, expected %q", c.given, actual, c.expected)
+			t.Errorf("Fraction.Reduce(%v) = %v, expected %v", c.given, actual, c.expected)
 		}
 	}
 }
@@ -104,7 +104,7 @@ func TestMultiplyByNumber(t *testing.T) {
 
 		// Assert
 		if actual != c.expected {
-			t.Errorf("Fraction.MultiplyByNumber(%q) = %q, expected %q", c.given, actual, c.expected)
+			t.Errorf("Fraction.MultiplyByNumber(%v) = %v, expected %v", c.given, actual, c.expected)
 		}
 	}
 }
@@ -125,7 +125,7 @@ func TestMultiplyByNumberWithInvalidData(t *testing.T) {
 
 		// Assert
 		if actual == c.expected {
-			t.Errorf("Fraction.MultiplyByNumber(%q) = %q, expected %q", c.given, actual, c.expected)
+			t.Errorf("Fraction.MultiplyByNumber(%v) = %v, expected %v", c.given, actual, c.expected)
 		}
 	}
 }
@@ -145,7 +145,7 @@ func TestMultiplyByFraction(t *testing.T) {
 
 		// Assert
 		if actual != c.expected {
-			t.Errorf("Fraction.MultiplyByFraction(%q) = %q, expected %q", c.a, actual, c.expected)
+			t.Errorf("Fraction.MultiplyByFraction(%v) = %v, expected %v", c.a, actual, c.expected)
 		}
 	}
 }
@@ -165,7 +165,7 @@ func TestMultiplyByFractionWithInvalidData(t *testing.T) {
 
 		// Assert
 		if actual == c.expected {
-			t.Errorf("Fraction.MultiplyByFraction(%q) = %q, expected %q", c.a, actual, c.expected)
+			t.Errorf("Fraction.MultiplyByFraction(%v) = %v, expected %v", c.a, actual, c.expected)
 		}
 	}
 }
