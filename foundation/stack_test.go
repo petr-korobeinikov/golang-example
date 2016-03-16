@@ -1,6 +1,7 @@
 package foundation
 
 import (
+	"errors"
 	"reflect"
 	"testing"
 )
@@ -55,6 +56,32 @@ func TestPush(t *testing.T) {
 		if !reflect.DeepEqual(c.expected, actual) {
 			fmt := "%v != %v after pushing %v"
 			t.Errorf(fmt, c.expected, actual, c.elements)
+		}
+	}
+}
+
+func TestPop(t *testing.T) {
+	// Arrange
+	cases := []struct {
+		expected interface{}
+		e        error
+		given    Stack
+	}{
+		{nil, errors.New("Unable to pop element from empty stack."), Stack{}},
+		{1, nil, Stack{1}},
+		{3, nil, Stack{1, 2, 3}},
+	}
+
+	for _, c := range cases {
+		// Act
+		saveGiven := c.given
+		actual, e := c.given.Pop()
+
+		// Assert
+		errorsNotEqual := !(c.e != nil && e != nil && c.e != e)
+		if c.expected != actual && errorsNotEqual {
+			fmt := "%v.Pop() == %v, %v, expected %v, %v"
+			t.Errorf(fmt, saveGiven, actual, e, c.expected, c.e)
 		}
 	}
 }
