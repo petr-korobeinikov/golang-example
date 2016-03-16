@@ -15,7 +15,7 @@ func Recursively(n int) int {
 		return 1
 	}
 
-	return Recursively(n - 1) + Recursively(n - 2)
+	return Recursively(n-1) + Recursively(n-2)
 }
 
 // Iteratively calculates Fibonacci numbers iteratively.
@@ -23,7 +23,7 @@ func Iteratively(n int) int {
 	fibs := []int{0, 1}
 
 	for i := 2; i <= n; i++ {
-		next := fibs[i - 1] + fibs[i - 2]
+		next := fibs[i-1] + fibs[i-2]
 		fibs = append(fibs, next)
 	}
 
@@ -35,5 +35,5 @@ func ByGoldenRatio(n int) int {
 	numerator := math.Pow(1.618034, float64(n)) - math.Pow(-0.618034, float64(n))
 	denominator := math.Sqrt(5)
 
-	return int(numerator / denominator);
+	return int(numerator / denominator)
 }

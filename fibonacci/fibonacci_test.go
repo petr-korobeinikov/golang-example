@@ -48,7 +48,7 @@ func TestByGoldenRatio(t *testing.T) {
 		delta := 3
 
 		// Assert
-		eqWithDelta := (c.fibn - delta <= actual) && (actual <= c.fibn + delta)
+		eqWithDelta := (c.fibn-delta <= actual) && (actual <= c.fibn+delta)
 		if !eqWithDelta {
 			t.Errorf("ByGoldenRatio(%d) == %d±%d, expected %d", c.n, actual, delta, c.fibn)
 		}

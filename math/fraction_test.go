@@ -15,7 +15,7 @@ func TestString(t *testing.T) {
 
 	for _, c := range cases {
 		// Act
-		actual := c.given.String();
+		actual := c.given.String()
 
 		// Assert
 		if actual != c.expected {
@@ -36,7 +36,7 @@ func TestStringWithInvalidData(t *testing.T) {
 
 	for _, c := range invalidCases {
 		// Act
-		actual := c.given.String();
+		actual := c.given.String()
 
 		// Assert
 		if actual == c.expected {
@@ -58,7 +58,7 @@ func TestReduce(t *testing.T) {
 
 	for _, c := range cases {
 		// Act
-		actual := c.given.Reduce();
+		actual := c.given.Reduce()
 
 		// Assert
 		if actual != c.expected {
@@ -79,7 +79,7 @@ func TestReduceWithInvalidData(t *testing.T) {
 
 	for _, c := range invalidCases {
 		// Act
-		actual := c.given.Reduce();
+		actual := c.given.Reduce()
 
 		// Assert
 		if actual == c.expected {
@@ -100,7 +100,7 @@ func TestMultiplyByNumber(t *testing.T) {
 
 	for _, c := range cases {
 		// Act
-		actual := c.given.MultiplyByNumber(c.m);
+		actual := c.given.MultiplyByNumber(c.m)
 
 		// Assert
 		if actual != c.expected {
@@ -121,7 +121,7 @@ func TestMultiplyByNumberWithInvalidData(t *testing.T) {
 
 	for _, c := range invalidCases {
 		// Act
-		actual := c.given.MultiplyByNumber(c.m);
+		actual := c.given.MultiplyByNumber(c.m)
 
 		// Assert
 		if actual == c.expected {
@@ -141,7 +141,7 @@ func TestMultiplyByFraction(t *testing.T) {
 
 	for _, c := range cases {
 		// Act
-		actual := c.a.MultiplyByFraction(c.b);
+		actual := c.a.MultiplyByFraction(c.b)
 
 		// Assert
 		if actual != c.expected {
@@ -161,7 +161,7 @@ func TestMultiplyByFractionWithInvalidData(t *testing.T) {
 
 	for _, c := range invalidCases {
 		// Act
-		actual := c.a.MultiplyByFraction(c.b);
+		actual := c.a.MultiplyByFraction(c.b)
 
 		// Assert
 		if actual == c.expected {

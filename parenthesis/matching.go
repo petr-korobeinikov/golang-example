@@ -37,7 +37,7 @@ func IsMatching(s string) bool {
 			}
 
 			var o rune
-			o, stack = stack[len(stack) - 1], stack[:len(stack) - 1]
+			o, stack = stack[len(stack)-1], stack[:len(stack)-1]
 
 			if c != pairs[o] {
 				return false

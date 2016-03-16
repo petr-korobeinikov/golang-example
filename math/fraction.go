@@ -17,7 +17,7 @@ func (f Fraction) Reduce() Fraction {
 	f.Numerator /= gcd
 	f.Denominator /= gcd
 
-	return f;
+	return f
 }
 
 // MultiplyByNumber multiplies fraction by given number.

@@ -18,13 +18,13 @@ func GCDRemainderRecursive(a, b int) int {
 	if b == 0 {
 		return a
 	}
-	return GCDRemainderRecursive(b, a % b)
+	return GCDRemainderRecursive(b, a%b)
 }
 
 // GCDRemainder calculates GCD iteratively using remainder.
 func GCDRemainder(a, b int) int {
 	for b != 0 {
-		a, b = b, a % b
+		a, b = b, a%b
 	}
 
 	return a
