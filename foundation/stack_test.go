@@ -2,17 +2,10 @@ package foundation
 
 import (
 	"errors"
+	"github.com/pkorobeinikov/golang-example/util"
 	"reflect"
 	"testing"
 )
-
-func makeInterfaceSlice(in []int) (out []interface{}) {
-	out = make([]interface{}, len(in))
-	for i, d := range in {
-		out[i] = d
-	}
-	return
-}
 
 func TestStackLen(t *testing.T) {
 	// Arrange
@@ -42,9 +35,9 @@ func TestStackPush(t *testing.T) {
 		given    Stack
 		elements []interface{}
 	}{
-		{Stack{}, Stack{}, makeInterfaceSlice([]int{})},
-		{Stack{1, 2, 3}, Stack{}, makeInterfaceSlice([]int{1, 2, 3})},
-		{Stack{1, 2, 3, 4, 5}, Stack{}, makeInterfaceSlice([]int{1, 2, 3, 4, 5})},
+		{Stack{}, Stack{}, util.MakeInterfaceSliceFromIntSlice([]int{})},
+		{Stack{1, 2, 3}, Stack{}, util.MakeInterfaceSliceFromIntSlice([]int{1, 2, 3})},
+		{Stack{1, 2, 3, 4, 5}, Stack{}, util.MakeInterfaceSliceFromIntSlice([]int{1, 2, 3, 4, 5})},
 	}
 
 	for _, c := range cases {
