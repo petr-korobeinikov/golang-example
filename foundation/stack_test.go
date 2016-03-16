@@ -14,7 +14,7 @@ func makeInterfaceSlice(in []int) (out []interface{}) {
 	return
 }
 
-func TestLen(t *testing.T) {
+func TestStackLen(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected int
@@ -35,7 +35,7 @@ func TestLen(t *testing.T) {
 	}
 }
 
-func TestPush(t *testing.T) {
+func TestStackPush(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected Stack
@@ -62,7 +62,7 @@ func TestPush(t *testing.T) {
 	}
 }
 
-func TestPop(t *testing.T) {
+func TestStackPop(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected interface{}
@@ -88,7 +88,7 @@ func TestPop(t *testing.T) {
 	}
 }
 
-func TestTop(t *testing.T) {
+func TestStackTop(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected interface{}
