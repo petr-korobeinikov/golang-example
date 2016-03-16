@@ -15,6 +15,7 @@ func makeInterfaceSlice(in []int) (out []interface{}) {
 }
 
 func TestLen(t *testing.T) {
+	// Arrange
 	cases := []struct {
 		expected int
 		given    Stack
@@ -35,6 +36,7 @@ func TestLen(t *testing.T) {
 }
 
 func TestPush(t *testing.T) {
+	// Arrange
 	cases := []struct {
 		expected Stack
 		given    Stack
