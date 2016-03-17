@@ -1,7 +1,6 @@
 package foundation
 
 import (
-	"errors"
 	"github.com/pkorobeinikov/golang-example/util"
 	"reflect"
 	"testing"
@@ -59,25 +58,35 @@ func TestStackPop(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected interface{}
-		err      error
 		given    Stack
 	}{
-		{nil, errors.New("Unable to pop element from empty stack."), Stack{}},
-		{1, nil, Stack{1}},
-		{3, nil, Stack{1, 2, 3}},
+		{1, Stack{1}},
+		{3, Stack{1, 2, 3}},
 	}
 
 	for _, c := range cases {
 		// Act
 		saveGiven := c.given
-		actual, e := c.given.Pop()
+		actual, _ := c.given.Pop()
 
 		// Assert
-		errorsNotEqual := !(c.err != nil && e != nil && c.err != e)
-		if c.expected != actual && errorsNotEqual {
-			fmt := "%v.Pop() == %v, %v, expected %v, %v"
-			t.Errorf(fmt, saveGiven, actual, e, c.expected, c.err)
+		if c.expected != actual {
+			fmt := "%v.Pop() == %v, expected %v"
+			t.Errorf(fmt, saveGiven, actual, c.expected)
 		}
+	}
+}
+
+func TestStackPopOnEmptyStack(t *testing.T) {
+	// Arrange
+	sut := &Stack{}
+
+	// Act
+	_, err := sut.Pop()
+
+	// Assert
+	if err == nil {
+		t.Errorf("Pop on an empty stack must lead to an error")
 	}
 }
 
@@ -85,23 +94,33 @@ func TestStackTop(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected interface{}
-		err      error
 		given    Stack
 	}{
-		{nil, errors.New("There is no top element in empty stack."), Stack{}},
-		{1, nil, Stack{1}},
-		{3, nil, Stack{1, 2, 3}},
+		{1, Stack{1}},
+		{3, Stack{1, 2, 3}},
 	}
 
 	for _, c := range cases {
 		// Act
-		actual, e := c.given.Top()
+		actual, _ := c.given.Top()
 
 		// Assert
-		errorsNotEqual := !(c.err != nil && e != nil && c.err != e)
-		if c.expected != actual && errorsNotEqual {
-			fmt := "%v.Top() == %v, %v, expected %v, %v"
-			t.Errorf(fmt, c.given, actual, e, c.expected, c.err)
+		if c.expected != actual {
+			fmt := "%v.Top() == %v, expected %v"
+			t.Errorf(fmt, c.given, actual, c.expected)
 		}
+	}
+}
+
+func TestStackTopOnEmptyStack(t *testing.T) {
+	// Arrange
+	sut := &Stack{}
+
+	// Act
+	_, err := sut.Top()
+
+	// Assert
+	if err == nil {
+		t.Errorf("Top on an empty stack must lead to an error")
 	}
 }
