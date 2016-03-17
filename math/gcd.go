@@ -13,7 +13,7 @@ func GCDEuclidean(a, b int) int {
 	return a
 }
 
-// GCDReminderRecursive calculates GCD recursively using remainder.
+// GCDRemainderRecursive calculates GCD recursively using remainder.
 func GCDRemainderRecursive(a, b int) int {
 	if b == 0 {
 		return a

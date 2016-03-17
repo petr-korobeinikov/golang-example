@@ -29,6 +29,7 @@ func (stack *Stack) Pop() (element interface{}, err error) {
 	return
 }
 
+// Top returns top element of the stack.
 func (stack Stack) Top() (element interface{}, err error) {
 	l := stack.Len()
 	if l == 0 {
