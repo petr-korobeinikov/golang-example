@@ -8,8 +8,8 @@ type LinkedListNode struct {
 
 // Len calculates the length of the linked list.
 func (list LinkedListNode) Len() (l int) {
-	l = 1
-	for curr := &list; curr.Next != nil; curr = curr.Next {
+	l = 0
+	for curr := &list; curr != nil; curr = curr.Next {
 		l++
 	}
 	return
