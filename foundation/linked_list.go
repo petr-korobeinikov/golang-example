@@ -14,3 +14,10 @@ func (list LinkedListNode) Len() (l int) {
 	}
 	return
 }
+
+func (list LinkedListNode) Last() (element *LinkedListNode) {
+	for curr := &list; curr != nil; curr = curr.Next {
+		element = curr
+	}
+	return
+}
