@@ -6,11 +6,11 @@ func TestLinkedListLen(t *testing.T) {
 	// Arrange
 	cases := []struct {
 		expected int
-		given    LinkedList
+		given    LinkedListNode
 	}{
-		{1, LinkedList{}},
-		{1, LinkedList{1, nil}},
-		{3, LinkedList{1, &LinkedList{2, &LinkedList{3, nil}}}},
+		{1, LinkedListNode{}},
+		{1, LinkedListNode{1, nil}},
+		{3, LinkedListNode{1, &LinkedListNode{2, &LinkedListNode{3, nil}}}},
 	}
 
 	for _, c := range cases {
