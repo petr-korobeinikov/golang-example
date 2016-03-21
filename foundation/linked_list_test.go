@@ -19,7 +19,7 @@ func TestLinkedListLen(t *testing.T) {
 
 		// Assert
 		if actual != c.expected {
-			t.Errorf("%v.Len() == %d, expeced %d", c.given, actual, c.expected)
+			t.Errorf("%v.Len() == %d, expected %d", c.given, actual, c.expected)
 		}
 	}
 }
@@ -41,7 +41,7 @@ func TestLinkedListLast(t *testing.T) {
 
 		// Assert
 		if actual != c.expected {
-			t.Errorf("%v.Last() == %d, expeced %d", c.given, actual, c.expected)
+			t.Errorf("%v.Last() == %d, expected %d", c.given, actual, c.expected)
 		}
 	}
 }
